@@ -11,7 +11,7 @@ let result = "";
 possibleChoices.forEach((choice) => {
     choice.addEventListener("click", (e) => {
         userChoice = e.target.id;
-        userChoiceDisplay.innerHTML = e.target.id;
+        userChoiceDisplay.innerHTML = userChoice;
         generateComputerChoice();
         getResult();
     });

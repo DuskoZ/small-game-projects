@@ -9,23 +9,53 @@
             rel="stylesheet"
             href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="./style.css" />
         <title>Rock - Paper - Scissors</title>
     </head>
     <body>
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Your Choice: <span id="user-choice"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
+        <main>
+            <h1>Rock Paper Scissors!</h1>
 
-        <button class="btn" id="rock">
-            <i class="las la-hand-rock"></i>Rock
-        </button>
-        <button class="btn" id="paper">
-            <i class="las la-hand-paper"></i>Paper
-        </button>
-        <button class="btn" id="scissors">
-            <i class="las la-hand-scissors"></i>Scissors
-        </button>
+            <div class="btn-container">
+                <button class="btn" id="rock">
+                    <i class="las la-hand-rock"></i>Rock
+                </button>
+                <button class="btn" id="paper">
+                    <i class="las la-hand-paper"></i>Paper
+                </button>
+                <button class="btn" id="scissors">
+                    <i class="las la-hand-scissors"></i>Scissors
+                </button>
+            </div>
+
+            <div class="choices">
+                <div class="choice">
+                    <h2>Computer Choice</h2>
+                    <div class="choice-icon">
+                        <span><i class="las la-question"></i></span>
+                    </div>
+                    <p id="computer-choice">Choice</p>
+                </div>
+
+                <div class="choice">
+                    <h2>Your Choice</h2>
+                    <div class="choice-icon">
+                        <span><i class="las la-question"></i></span>
+                    </div>
+                    <p id="user-choice">Choice</p>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <h2>Result:</h2>
+                <p id="result">.</p>
+                <p class="score">User <span id="score">0:0</span> Computer</p>
+            </div>
+        </main>
 
         <script src="./main.js"></script>
     </body>
