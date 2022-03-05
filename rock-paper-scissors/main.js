@@ -13,6 +13,7 @@ let result = "";
 let userScore = 0;
 let computerScore = 0;
 
+// Event listeners on choice buttons
 possibleChoices.forEach((choice) => {
     choice.addEventListener("click", (e) => {
         userChoice = e.target.id;

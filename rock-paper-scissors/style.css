@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-dark: #333;
+    --clr-light: #fafafa;
+    --clr-accent: #00cecb;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+}
+
+main h1 {
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+/* Choice Buttons */
+
+main .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.btn-container i {
+    font-size: 1.5rem;
+    margin-right: 0.25em;
+    transition: 0.5s;
+}
+
+.btn-container .btn {
+    color: var(--clr-accent);
+    background: #fff;
+    outline: 2px solid var(--clr-dark);
+    border: none;
+    font-family: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 4px;
+    width: 8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.btn-container .btn:hover {
+    outline: 2px solid var(--clr-accent);
+}
+
+/* fixes "bug" when user clicks on hand icon inside of button instead on button */
+/* https://css-tricks.com/slightly-careful-sub-elements-clickable-things */
+.btn-container .btn * {
+    pointer-events: none;
+}
+
+.btn-container .btn:hover i {
+    color: var(--clr-dark);
+    transform: rotate(45deg);
+}
+
+main .choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 0.75em;
+}
+
+/* Choice containers */
+
+.choices .choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.choices h2 {
+    font-size: 0.875rem;
+}
+
+.choices .choice-icon {
+    width: 4.25rem;
+    height: 4.25rem;
+    display: grid;
+    place-items: center;
+}
+
+.choices .choice-icon i {
+    font-size: 3rem;
+    color: var(--clr-accent);
+}
+
+.choices .choice p {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Result section */
+
+main .result-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.result-container #result {
+    font-weight: 600;
+}
+
+.result-container #score {
+    color: var(--clr-accent);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.result-container .score {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-transform: uppercase;
+    margin-left: 3.25em;
+}
