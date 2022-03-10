@@ -7,19 +7,65 @@
 }
 
 :root {
-    --clr-dark: #333;
-    --clr-light: #fafafa;
+    --clr-secondary: #333;
+    --clr-primary: #fafafa;
     --clr-accent: #00cecb;
+
+    --transition: all 0.5s ease;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+    --clr-primary: #333;
+    --clr-secondary: #fafafa;
+    --clr-accent: #e6f331;
+
+    --box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 body {
     font-family: "Montserrat", sans-serif;
-    color: var(--clr-dark);
-    background-color: var(--clr-light);
+    color: var(--clr-secondary);
+    background-color: var(--clr-primary);
     min-height: 100vh;
     overflow: hidden;
     display: grid;
     place-items: center;
+    transition: var(--transition);
+}
+
+header {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+}
+
+header .btns {
+    position: relative;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .btns i {
+    font-size: 2rem;
+    color: var(--clr-secondary);
+    transition: var(--transition);
+}
+
+header .btns i:nth-of-type(2) {
+    display: none;
+}
+
+header .btns.active i:nth-of-type(1) {
+    display: none;
+}
+
+header .btns.active i:nth-of-type(2) {
+    display: block;
 }
 
 main {
@@ -47,13 +93,13 @@ main .btn-container {
 .btn-container i {
     font-size: 1.5rem;
     margin-right: 0.25em;
-    transition: 0.5s;
+    transition: var(--transition);
 }
 
 .btn-container .btn {
     color: var(--clr-accent);
-    background: #fff;
-    outline: 2px solid var(--clr-dark);
+    background: var(--clr-primary);
+    outline: 2px solid var(--clr-secondary);
     border: none;
     font-family: inherit;
     font-size: 0.875rem;
@@ -63,7 +109,7 @@ main .btn-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.5s;
+    transition: var(--transition);
 }
 
 .btn-container .btn:hover {
@@ -77,7 +123,7 @@ main .btn-container {
 }
 
 .btn-container .btn:hover i {
-    color: var(--clr-dark);
+    color: var(--clr-secondary);
     transform: rotate(45deg);
 }
 
@@ -98,7 +144,7 @@ main .choices {
     align-items: center;
     width: 10rem;
     height: 10rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--box-shadow);
 }
 
 .choices h2 {

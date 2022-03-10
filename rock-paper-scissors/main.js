@@ -6,6 +6,16 @@ const scoreDisplay = document.getElementById("score");
 const userIcon = document.getElementById("user-icon");
 const computerIcon = document.getElementById("computer-icon");
 
+// theme select
+const themeToggle = document.querySelector(".theme-toggle");
+const body = document.body;
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    themeToggle.classList.toggle("active");
+});
+
+// variable declarations
 const icons = ["la-hand-rock", "la-hand-paper", "la-hand-scissors"];
 let userChoice = "";
 let computerChoice = "";
